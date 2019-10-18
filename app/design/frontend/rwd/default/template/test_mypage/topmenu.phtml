@@ -1,0 +1,30 @@
+<?php $_menu = $this->getHtml('level-top') ?>
+<?php
+$collection = Mage::getModel('reports/product_index_viewed')
+    ->getCollection()
+    ->addIndexFilter()
+    ->setOrder('added_at', 'DESC');
+?>
+<?php if ($_menu): ?>
+    <nav id="nav">
+        <ol class="nav-primary">
+            <?php echo $_menu ?>
+            <?php if ($collection): ?>
+            <li class="level0 nav-7 parent"><a class="level0 has-children" href="">Last Visited</a>
+                <?php
+                $count = 0;
+                echo "<ul class='level0'> ";
+                foreach ($collection as $item) {
+                    $count++;
+                    echo "<li class='level1 nav-7-{$count}'><a href='{$item->getProductUrl()}'>{$item->getProductUrl()}</a></li>";
+                    if ($count == 5) {
+                        break;
+                    }
+                }
+                echo "</ul>";
+                echo "</li>";
+                ?>
+                <?php endif ?>
+        </ol>
+    </nav>
+<?php endif ?>

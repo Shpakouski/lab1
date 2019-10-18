@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Test_Mypage>
+            <version>0.1.0</version>
+        </Test_Mypage>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <test_mypage>
+                    <file>test_mypage.xml</file>
+                </test_mypage>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <blocks>
+            <page>
+                <rewrite>
+                    <html_topmenu>Test_Mypage_Block_Html_Mymenu</html_topmenu>
+                </rewrite>
+            </page>
+        </blocks>
+    </global>
+</config>

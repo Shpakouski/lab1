@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="catalog.topnav">
+            <block type="test_mypage/html_topmenu" name="catalog.topnav">
+                <action method="setTemplate">
+                    <template>test_mypage/topmenu.phtml</template>
+                </action>
+            </block>
+        </reference>
+    </default>
+</layout>
+
