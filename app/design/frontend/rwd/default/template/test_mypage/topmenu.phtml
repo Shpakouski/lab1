@@ -9,7 +9,7 @@ $collection = Mage::getModel('reports/product_index_viewed')
     <nav id="nav">
         <ol class="nav-primary">
             <?php echo $_menu ?>
-            <?php if ($collection): ?>
+            <?php if ($collection->getFirstItem()->getProductId()): ?>
             <li class="level0 nav-7 parent"><a class="level0 has-children" href="">Last Visited</a>
                 <?php
                 $count = 0;
